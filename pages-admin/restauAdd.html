@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Ajouter un restaurant</title>
+	<!-- custom-theme -->
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+	<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	<script type="application/x-javascript">
+		addEventListener("load", function() {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+
+	<!-- //custom-theme -->
+	<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+
+	<link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- js -->
+	<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+	<!-- //js -->
+
+	<!-- font-awesome-icons -->
+	<link rel="stylesheet" href="../css/font-awesome.min.css" />
+	<!-- //font-awesome-icons -->
+
+	<!-- google fonts -->
+	<link href="//fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+	<!-- //google fonts -->
+
+	<!-- Leaflet -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+
+	<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin="">
+	</script>
+	<!-- Leaflet -->
+
+</head>
+
+<body>
+
+
+	<div class="banner-header banner2">
+		<div class="banner-dott1">
+			<!--header-->
+			<div class="header">
+				<div class="container-fluid">
+					<nav class="navbar navbar-default">
+						<div class="navbar-header navbar-left">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<div class="w3_navigation_pos">
+								<h1><a href="../pages-admin/index.html">Esprit Food</a></h1>
+							</div>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+							<nav>
+								<ul class="nav navbar-nav">
+									<li><a href="../pages-admin/index.html">Dashboard</a></li>
+									<li><a href="../pages-admin/commandeList.html">Commandes</a></li>
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-hover="Pages" data-toggle="dropdown">Offres<b class="caret"></b></a>
+										<ul class="dropdown-menu">
+											<li><a href="../pages-admin/offreList.html">Mes Offres</a></li>
+											<li><a href="../pages-admin/offreAdd.html">Ajouter Offre</a></li>
+										</ul>
+									</li>
+									<li><a href="../pages-admin/menuAdd.html">Menu</a></li>
+									<li class="active"><a href="#">Restaurants</a></li>
+									<li><a href="../login.html">Déconnexion</a></li>
+								</ul>
+							</nav>
+						</div>
+					</nav>
+				</div>
+			</div>
+			<!--//header-->
+		</div>
+	</div>
+	<!-- // banner -->
+
+	<!-- contact -->
+	<div class="contact">
+		<div class="container">
+			<h2 class="heading">Ajouter <span> Un </span></h2>
+			<p class="heading">Nouveau restaurant</p>
+			<div class="contact-agileinfo">
+				<div class="col-md-7 contact-right">
+
+					<form action="#" method="post">
+						<input type="text" id="address" placeholder="Libellé" required="">
+						<br /><br />
+						<br /><br />
+
+						<!-- MAP -->
+						<div class="agileits-w3layouts-map">
+							<div id="mapid" style="height: 250px;"></div>
+						</div>
+
+						<script type="text/javascript">
+							window.onload = function() {
+								var mymap = L.map('mapid').setView([36.853761, 10.207208], 14);
+
+								L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+									attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>, Imagery © <a href='https://www.mapbox.com/'>Mapbox</a>",
+									maxZoom: 18,
+									id: "mapbox.streets",
+									accessToken: "pk.eyJ1IjoicmVuYXJkOTkiLCJhIjoiY2sxZHRzdWVuMDl1NjNvcW0yaGg0MXZvNyJ9.199DyyebB5-wFJZIzUYnkg"
+								}).addTo(mymap);
+
+								var position;
+								var marker = L.marker();
+
+								function onMapClick(e) {
+									var latlng = e.latlng.toString().substring(7, e.latlng.toString().length - 1);
+									latlng = latlng.replace(" ", "");
+									sessionStorage.setItem("latlng", latlng);
+									//Appel API ADDRESS
+									var obj;
+
+									var xhttp = new XMLHttpRequest();
+									xhttp.onreadystatechange = function() {
+										if (this.readyState === 4) {
+											obj = JSON.parse(xhttp.responseText);
+
+											if (obj.Response.View[0].Result[0].Location.Address.Country !== "TUN") {
+												sessionStorage.setItem("latlng", "");
+												alert("Merci d'entrer une adresse dans le territoire tunisien !");
+												map.removeLayer(marker)
+												return;
+											}
+
+											var address = "";
+  setTimeout(function(){  }, 1000);
+											address = obj.Response.View[0].Result[0].Location.Address.Label;
+											//address = response.Response.MetaInfo.NextPageInformation;
+											position = address;
+											sessionStorage.setItem("position", position);
+											///////////////////////////////
+									marker
+										.setLatLng(e.latlng)
+										.bindPopup(position).openPopup()
+										.addTo(mymap);
+										}
+									};
+									xhttp.open("GET", "https://reverse.geocoder.api.here.com/6.2/reversegeocode.json?prox=" + latlng + ",250&mode=retrieveAddresses&maxresults=1&gen=9&app_id=4ko8BcJbpRq5Tgj5jhdF&app_code=zClPIQ02R0cGwgah-gKA_Q");
+									xhttp.send();
+									
+									
+
+									
+								}
+								mymap.on("click", onMapClick);
+							};
+						</script>
+						<!-- //MAP -->
+
+						<br />
+						<h2 align="center"><a href="#" class="label label-success" onclick="ajouterRestau();">Ajouter</a></h2>
+					</form>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!-- //contact -->
+
+
+	<script src="../js/services/AdminAddRestau.js"></script>
+
+
+	<!-- start-smoth-scrolling -->
+	<script src="../js/SmoothScroll.min.js"></script>
+
+	<script type="text/javascript" src="../js/move-top.js"></script>
+	<script type="text/javascript" src="../js/easing.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1000);
+			});
+		});
+	</script>
+
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+
+		});
+	</script>
+	<!-- //here ends scrolling icon -->
+
+	<!-- for bootstrap working -->
+	<script src="../js/bootstrap.js"></script>
+	<!-- //for bootstrap working -->
+	<script src="../js/services/AdminAddRestau.js"></script>
+</body>
+
+</html>

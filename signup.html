@@ -1,0 +1,143 @@
+<!--
+author: W3layouts
+author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Inscription</title>
+<!-- custom-theme -->
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Food Recipe a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<!-- //custom-theme -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+
+<!-- font-awesome-icons -->
+<link rel="stylesheet" href="css/font-awesome.min.css" />
+<!-- //font-awesome-icons -->
+
+<style>
+.contact-agileinfo input[type="password"],input[type="tel"] {
+    width: 100%;
+    color: #999;
+    background: none;
+    outline: none;
+    font-size: .9em;
+    padding: .7em .8em;
+    border: solid 1px #ccc;
+    -webkit-appearance: none;
+    display: inline-block;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="banner-header banner2">
+	<div class="banner-dott1">
+		<!--header-->
+		<div class="header">
+		<div class="container-fluid">
+			<nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+
+					<div class="w3_navigation_pos">
+						<h1><a href="index.html">Esprit Food</a></h1>
+					</div>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+
+			</nav>
+		</div>
+	</div>
+		<!--//header-->
+	</div>
+</div>
+<!-- // banner -->
+
+<!-- contact -->
+	<div class="contact">
+		<div class="container">
+			<h2 class="heading">Inscrivez<span>-vous</span></h2>
+				<p class="heading"></p>
+			<div class="contact-agileinfo">
+				<div class="col-md-7 contact-right">
+					<form action="#" method="post">
+						<input type="text" id="nom" placeholder="Nom" required > <br><br>
+						<input type="text" id="prenom" placeholder="Prénom" required><br><br>
+						<input type="tel" id="tel" placeholder="Téléphone" required><br><br>
+						<input type="email" id="email" placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required><br><br>
+						<input type="text" id="username" placeholder="Nom d'utilisateur" required > <br><br>
+						<input type="password" id="password" placeholder="Mot de passe" required> <hr>
+						<h2 align="center"><a href="#" class="label label-success" onclick="signup();">Créer mon compte</a> <a href="login.html" class="label label-default">Connexion ➔</a></h2>
+					</form>
+
+
+				</div>
+
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- //contact -->
+
+
+
+<!-- start-smoth-scrolling -->
+<script src="js/SmoothScroll.min.js"></script>
+
+<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1000);
+			});
+		});
+	</script>
+
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+
+<!-- for bootstrap working -->
+	<script src="js/bootstrap.js"></script>
+	<script src="js/services/signup.js"></script>
+<!-- //for bootstrap working -->
+
+</body>
+</html>

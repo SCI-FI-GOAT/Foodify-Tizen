@@ -1,0 +1,147 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0" />
+  <link rel="stylesheet" href="../css/panier.css">
+  <title>Panier</title>
+
+  <style type="text/css">
+
+
+#map-wrapper {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    border: 1px solid black;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    background-color: green;
+}
+
+#button-wrapper {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    border: 1px solid red;
+}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+   <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+
+
+</head>
+
+<body>
+  <main>
+    <div class="basket">
+    <div class="summary-checkout">
+	  </div>
+<br><br><br><br><br>
+<!-- MAP -->
+						<div class="agileits-w3layouts-map">
+							<div id="mapid" style="height: 250px;"></div>
+						</div>
+
+						<script type="text/javascript">
+							window.onload = function() {
+								var mymap = L.map('mapid').setView([36.853761, 10.207208], 10);
+
+								L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+									attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>, Imagery © <a href='https://www.mapbox.com/'>Mapbox</a>",
+									maxZoom: 18,
+									id: "mapbox.streets",
+									accessToken: "pk.eyJ1IjoicmVuYXJkOTkiLCJhIjoiY2sxZHRzdWVuMDl1NjNvcW0yaGg0MXZvNyJ9.199DyyebB5-wFJZIzUYnkg"
+								}).addTo(mymap);
+
+								var position;
+								var marker = L.marker();
+
+								function onMapClick(e) {
+									var latlng = e.latlng.toString().substring(7, e.latlng.toString().length - 1);
+									latlng = latlng.replace(" ", "");
+									sessionStorage.setItem("latlng", latlng);
+
+
+									//Appel API ADDRESS
+									var obj;
+
+									var xhttp = new XMLHttpRequest();
+									xhttp.onreadystatechange = function() {
+										if (this.readyState === 4) {
+											obj = JSON.parse(xhttp.responseText);
+
+
+
+											if (obj.Response.View[0].Result[0].Location.Address.Country !== "TUN") {
+												sessionStorage.setItem("latlng", "");
+												alert("Merci d'entrer une adresse dans le territoire tunisien !");
+												map.removeLayer(marker)
+												return;
+											}
+
+											var address = "";
+  setTimeout(function(){  }, 1000);
+											address = obj.Response.View[0].Result[0].Location.Address.Label;
+											//address = response.Response.MetaInfo.NextPageInformation;
+											position = address;
+											sessionStorage.setItem("position", position);
+											///////////////////////////////
+									marker
+										.setLatLng(e.latlng)
+										.bindPopup(position).openPopup()
+										.addTo(mymap);
+										}
+									};
+									xhttp.open("GET", "https://reverse.geocoder.api.here.com/6.2/reversegeocode.json?prox=" + latlng + ",250&mode=retrieveAddresses&maxresults=1&gen=9&app_id=4ko8BcJbpRq5Tgj5jhdF&app_code=zClPIQ02R0cGwgah-gKA_Q");
+									xhttp.send();
+
+
+
+
+								}
+								mymap.on("click", onMapClick);
+							};
+						</script>
+						<!-- //MAP -->
+						<br><br><br>
+						<button class="checkout-cta" onclick="toCart()">Retour au panier</button>
+						<button class="checkout-cta" onclick="toCmd()">Envoyer ma commande</button>
+</div>
+
+  </main>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+
+
+  <script  src="../js/services/envoyerCommandeUser.js"></script>
+
+  <script type="text/javascript">
+  function toCart(){
+		window.location.href = "panier.html";
+  }
+  function toCmd(){
+		 var position = sessionStorage.getItem("position");
+  if (position !== ""){
+  		envoyerCmd();
+  		}
+  		else {
+  		alert ("Mentionnez l'adresse de la livraison");}
+  }
+
+  </script>
+
+
+
+</body>
+
+</html>

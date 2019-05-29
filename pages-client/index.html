@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Tableau de board</title>
+  <!-- custom-theme -->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+  <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="keywords" content="Food Recipe a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+  <script type="application/x-javascript">
+    addEventListener("load", function() {
+      setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+      window.scrollTo(0, 1);
+    }
+  </script>
+
+  <!-- //custom-theme -->
+  <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+
+  <!-- for banner css -->
+  <link href="../css/carousel.css" type="text/css" rel="stylesheet" media="all"><!-- carousel css -->
+  <!-- //for banner css -->
+
+  <link rel="stylesheet" href="../css/owl.carousel.css" type="text/css" media="all" /> <!-- Owl-Carousel-CSS -->
+
+  <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" /><!-- Theme-CSS -->
+
+  <link rel="stylesheet" href="../css/flexslider.css" type="text/css" media="screen" property="" /> <!-- Flexslider-CSS -->
+
+  <!-- js -->
+  <script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+  <!-- //js -->
+
+  <!-- font-awesome-icons -->
+  <link rel="stylesheet" href="../css/font-awesome.min.css" />
+  <!-- //font-awesome-icons -->
+
+
+  <style>
+
+  body {
+    margin: 0;
+  }
+
+  header {
+    height: 200px;
+    font-size: 400%;
+    padding-top: 40px;
+    padding-left: 40px;
+  }
+
+  .box-a {
+    height: 300px;
+
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+
+  .box::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card-a {
+    display: inline-block;
+
+    text-align: center;
+    height: 100%;
+    width: 300px;
+    padding: 40px;
+  }
+
+  </style>
+
+</head>
+
+<body onload="dashboardClient()">
+  <!-- banner -->
+  <div class="banner-header banner2">
+    <div class="banner-dott1">
+      <!--header-->
+      <div class="header">
+        <div class="container-fluid">
+          <nav class="navbar navbar-default">
+            <div class="navbar-header navbar-left">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <div class="w3_navigation_pos">
+                <h1><a href="../pages-client/index.html">Esprit Food</a></h1>
+              </div>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+              <nav>
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Dashboard</a></li>
+                  <li><a href="menu.html">Menu</a></li>
+                  <li><a href="panier.html">Panier</a></li>
+                  <li><!--<a href="profile.html">Profile</a>--></li>
+                  <li><a href="map.html">Map</a></li>
+                  <li><a href="../login.html">Déconnexion</a></li>
+                </ul>
+              </nav>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!--//header-->
+    </div>
+  </div>
+  <!-- // banner -->
+
+	<!-- Dashboard Orange: #FC6930 / En cours:  #F9C464 / Traitée: #42b883 / Annulee: #c70d3a  -->
+  <br><br>
+	<div class="w3-heading-grid">
+	  <h3 class="heading">Mes <span>Commandes</span></h3>
+	  <p class="heading"></p>
+	  <div class="agileits-border"> </div>
+	</div>
+	<div id="commandeItem">
+
+  </div>
+
+
+	<div class="w3-heading-grid">
+	  <h3 class="heading">TOP 5</h3>
+	  <p class="heading"></p>
+	  <div class="agileits-border"> </div>
+	</div>
+  <div id="top5Item">
+
+  </div>
+
+
+
+
+	<div class="w3-heading-grid">
+	  <h3 class="heading">Offres</h3>
+	  <p class="heading"></p>
+	  <div class="agileits-border"> </div>
+	</div>
+  <div id="promosItem">
+
+  </div>
+
+
+
+
+	<div class="w3-heading-grid">
+	  <h3 class="heading">Préférences</h3>
+	  <p class="heading"></p>
+	  <div class="agileits-border"> </div>
+	</div>
+  <div id="recommandedItem">
+
+  </div>
+
+
+	<!-- //Dashboard -->
+
+
+  <!-- Services Call -->
+  <script src="../js/services/ClientDashboard.js"></script>
+  <script src="../js/services/ClientCommandes.js"></script>
+  <!-- //Services Call -->
+
+  <!-- start-smoth-scrolling -->
+  <script src="../js/SmoothScroll.min.js"></script>
+  <script type="text/javascript" src="../js/move-top.js"></script>
+  <script type="text/javascript" src="../js/easing.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $(".scroll").click(function(event) {
+        event.preventDefault();
+        $('html,body').animate({
+          scrollTop: $(this.hash).offset().top
+        }, 1000);
+      });
+    });
+  </script>
+
+  <!-- here stars scrolling icon -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      /*
+      	var defaults = {
+      	containerID: 'toTop', // fading element id
+      	containerHoverID: 'toTopHover', // fading element hover id
+      	scrollSpeed: 1200,
+      	easingType: 'linear'
+      	};
+      */
+
+      $().UItoTop({
+        easingType: 'easeOutQuart'
+      });
+
+    });
+  </script>
+  <!-- //here ends scrolling icon -->
+
+  <!-- for bootstrap working -->
+  <script src="../js/bootstrap.js"></script>
+  <!-- //for bootstrap working -->
+
+
+</body>
+
+</html>

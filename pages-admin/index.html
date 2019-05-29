@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Tableau de board</title>
+  <!-- custom-theme -->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+  <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="keywords" content="Food Recipe a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+  <script type="application/x-javascript">
+    addEventListener("load", function() {
+      setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+      window.scrollTo(0, 1);
+    }
+  </script>
+
+  <!-- //custom-theme -->
+  <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+
+  <!-- for banner css -->
+  <link href="../css/carousel.css" type="text/css" rel="stylesheet" media="all"><!-- carousel css -->
+  <!-- //for banner css -->
+
+  <link rel="stylesheet" href="../css/owl.carousel.css" type="text/css" media="all" /> <!-- Owl-Carousel-CSS -->
+
+  <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" /><!-- Theme-CSS -->
+
+  <link rel="stylesheet" href="../css/flexslider.css" type="text/css" media="screen" property="" /> <!-- Flexslider-CSS -->
+
+  <!-- js -->
+  <script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+  <!-- //js -->
+
+  <!-- font-awesome-icons -->
+  <link rel="stylesheet" href="../css/font-awesome.min.css" />
+  <!-- //font-awesome-icons -->
+
+  <!-- google fonts -->
+  <link href="//fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+  <!-- //google fonts -->
+
+</head>
+
+<body onload="getDashTop()">
+
+  <div class="banner-header banner2">
+    <div class="banner-dott1">
+      <!--header-->
+      <div class="header">
+        <div class="container-fluid">
+          <nav class="navbar navbar-default">
+            <div class="navbar-header navbar-left">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <div class="w3_navigation_pos">
+                <h1><a href="../pages-admin/index.html">Esprit Food</a></h1>
+              </div>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+              <nav>
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Dashboard</a></li>
+                  <li><a href="../pages-admin/commandeList.html">Commandes</a></li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-hover="Pages" data-toggle="dropdown">Offres<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="../pages-admin/offreList.html">Mes Offres</a></li>
+                      <li><a href="../pages-admin/offreAdd.html">Ajouter Offre</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="../pages-admin/menuAdd.html">Menu</a></li>
+                  <li><a href="../pages-admin/restauAdd.html">Restaurants</a></li>
+                  <li><a href="../login.html">Déconnexion</a></li>
+                </ul>
+              </nav>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!--//header-->
+    </div>
+  </div>
+  <!-- // banner -->
+
+  <!-- choose-us -->
+  <div class="why-choose-agile">
+    <div class="container">
+
+      <div class="w3-heading-grid">
+        <h3 class="heading">Tableau <span>de bord</span></h3>
+        <p class="heading"></p>
+        <div class="agileits-border"> </div>
+      </div>
+      <br><br>
+
+      <div class="why-choose-agile-grids-top">
+        <div class="col-md-4 agileits-w3layouts-grid">
+
+          <!-- Commades item -->
+          <div class="wthree_agile_us">
+            <div class="col-xs-9 agile-why-text">
+              <h4>Commandes</h4>
+              <br>
+              <h4 id="nbCmd" style="color: #f13d00;">5</h4>
+            </div>
+            <div class="col-xs-3 agile-why-text">
+              <div class="wthree_features_grid hvr-rectangle-out">
+                <i class="fa fa-cutlery" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
+          <!-- //Commades item -->
+
+          <!-- Offres item -->
+          <div class="wthree_agile_us">
+            <div class="col-xs-9 agile-why-text">
+              <h4>Offres</h4>
+              <br>
+              <h4 id="nbOffres" style="color: #f13d00;">5</h4>
+            </div>
+            <div class="col-xs-3 agile-why-text">
+              <div class="wthree_features_grid hvr-rectangle-out">
+                <i class="fa fa-gift" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
+          <!-- //Offres item -->
+
+          <!-- Restaurants item -->
+          <div class="wthree_agile_us">
+            <div class="col-xs-9 agile-why-text">
+              <h4>Restaurants</h4>
+              <br>
+              <h4 id="nbRest" style="color: #f13d00;">5</h4>
+            </div>
+            <div class="col-xs-3 agile-why-text">
+              <div class="wthree_features_grid hvr-rectangle-out">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
+          <!-- //Restaurants item -->
+
+          <!-- Client item -->
+          <div class="wthree_agile_us">
+            <div class="col-xs-9 agile-why-text">
+              <h4>Clients</h4>
+              <br>
+              <h4 id="nbClients" style="color: #f13d00;">5</h4>
+            </div>
+            <div class="col-xs-3 agile-why-text">
+              <div class="wthree_features_grid hvr-rectangle-out">
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
+          <!-- //Clients item -->
+
+        </div>
+
+        <br><br>
+
+        <div class="col-md-4 agileits-w3layouts-grid img">
+          <img src="../images/slider4.jpg" alt=" " class="img-responsive" />
+        </div>
+
+        <br><br>
+
+        <div class="col-md-4 agileits-w3layouts-grid">
+
+          <!-- Commandes en Cours item -->
+          <div class="wthree_agile_us">
+            <div class="col-xs-3 agile-why-text agile-icon-left">
+              <div class="wthree_features_grid hvr-rectangle-out">
+                <i class="glyphicon glyphicon-time" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="col-xs-9 agile-why-text two">
+              <h4>Commandes en cours</h4>
+              <br>
+              <h4 id="nbCmdEnCours" style="color: #4caf50;">10</h4>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
+          <!-- //Commandes en Cours item -->
+
+          <!-- Commandes Traitées item -->
+          <div class="wthree_agile_us">
+            <div class="col-xs-3 agile-why-text agile-icon-left">
+              <div class="wthree_features_grid hvr-rectangle-out">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="col-xs-9 agile-why-text two">
+              <h4>Commandes traitées</h4>
+              <br>
+              <h4 id="nbCmdTraitee" style="color: #4caf50;">10</h4>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
+          <!-- //Commandes Traitées item -->
+
+          <!-- //Commandes Annulées item -->
+          <div class="wthree_agile_us">
+            <div class="col-xs-3 agile-why-text agile-icon-left">
+              <div class="wthree_features_grid hvr-rectangle-out">
+                <i class="fa fa-times" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="col-xs-9 agile-why-text two">
+              <h4>Commandes annulées</h4>
+              <br>
+              <h4 id="nbCmdAnnulee" style="color: #4caf50;">10</h4>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
+          <!-- Commandes Annulées item -->
+
+          <div class="clearfix"> </div>
+        </div>
+
+        <div class="clearfix"> </div>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+  <!-- //choose-us -->
+
+  <!-- Services Call -->
+  <script src="../js/services/AdminDashboard.js"></script>
+  <!-- //Services Call -->
+
+  <!-- start-smoth-scrolling -->
+  <script src="../js/SmoothScroll.min.js"></script>
+  <script type="text/javascript" src="../js/move-top.js"></script>
+  <script type="text/javascript" src="../js/easing.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $(".scroll").click(function(event) {
+        event.preventDefault();
+        $('html,body').animate({
+          scrollTop: $(this.hash).offset().top
+        }, 1000);
+      });
+    });
+  </script>
+
+  <!-- here stars scrolling icon -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      /*
+      	var defaults = {
+      	containerID: 'toTop', // fading element id
+      	containerHoverID: 'toTopHover', // fading element hover id
+      	scrollSpeed: 1200,
+      	easingType: 'linear'
+      	};
+      */
+
+      $().UItoTop({
+        easingType: 'easeOutQuart'
+      });
+
+    });
+  </script>
+  <!-- //here ends scrolling icon -->
+
+  <!-- for bootstrap working -->
+  <script src="../js/bootstrap.js"></script>
+  <!-- //for bootstrap working -->
+
+
+</body>
+
+</html>
